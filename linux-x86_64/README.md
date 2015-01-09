@@ -2,6 +2,8 @@
 
 This is a standalone executable packaged from the Ruby [pact-mock-service-gem] gem.
 
+See the [Pact Mock Service homepage][pact-mock-service-gem] for documentation about running the mock service.
+
 ## Usage
 
     $ npm install pact-mock-service-linux-x86_64
