@@ -1,0 +1,31 @@
+{
+  "name": "pact-mock-service-osx",
+  "version": "0.2.3-rc3",
+  "description": "Pact mock service",
+  "main": "bin/pact-mock-service",
+  "directories": {
+    "lib": "lib",
+    "bin": "bin"
+  },
+  "bin": {
+    "pact-mock-service": "./bin/pact-mock-service"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bethesque/pact-mock_service"
+  },
+  "keywords": [
+    "pact",
+    "mock",
+    "service"
+  ],
+  "author": "Beth Skurrie <beth@bethesque.com> (https://github.com/bethesque)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bethesque/pact-mock_service/issues"
+  },
+  "homepage": "https://github.com/bethesque/pact-mock-service-npm"
+}
