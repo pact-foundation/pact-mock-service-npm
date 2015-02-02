@@ -1,6 +1,6 @@
-# Pact Mock Service for OSX
+# Pact Mock Service for NPM
 
-This is a standalone executable packaged from the Ruby [pact-mock-service-gem] gem.
+This is a project to build the standalone Pact Mock Service and make it available via NPM.
 
 For documentation about how to use the Pact Mock Server, see the [Pact Mock Server][pact-mock-service-gem] homepage.
 
