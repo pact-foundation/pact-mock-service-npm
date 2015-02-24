@@ -9,5 +9,7 @@ else
   git pull
 fi
 
+git checkout tags/v${GEM_VERSION}
+
 bundle
 bundle exec rake package
