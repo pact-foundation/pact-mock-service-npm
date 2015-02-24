@@ -4,7 +4,7 @@
 ## Building
 
 * Set the GEM_VERSION and RELEASE_VERSION in `scripts/build.sh`
-* Update the version number in each `package.json` file to $GEM_VERSION.$RELEASE_VERSION
+* Update the version number in each `package.json` file to $GEM_VERSION-$RELEASE_VERSION
 
     $ scripts/build.sh
 
