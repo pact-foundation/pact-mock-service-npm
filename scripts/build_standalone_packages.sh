@@ -6,7 +6,8 @@ if [ ! -d "pact-mock_service" ]; then
   cd pact-mock_service
 else
   cd pact-mock_service
-  git pull
+  git checkout master
+  git pull origin master
 fi
 
 git checkout tags/v${GEM_VERSION}
