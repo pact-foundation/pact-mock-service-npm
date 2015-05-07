@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-export GEM_VERSION=0.4.2
+export GEM_VERSION=0.5.1
 export RELEASE_VERSION=1
 export PACKAGE_VERSION=${GEM_VERSION}-${RELEASE_VERSION}
 
