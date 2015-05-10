@@ -11,20 +11,24 @@ scripts/build_standalone_packages.sh
 export STANDALONE_PACKAGE_NAME="pact-mock-service-$PACKAGE_VERSION-win32"
 export NPM_PACKAGE_NAME='pact-mock-service-win32'
 export SUFFIX='win32'
+export EXTENSION='.zip'
 scripts/package_for_npm.sh
 
 export STANDALONE_PACKAGE_NAME="pact-mock-service-$PACKAGE_VERSION-osx"
 export NPM_PACKAGE_NAME='pact-mock-service-osx'
 export SUFFIX='osx'
+export EXTENSION='tar.gz'
 scripts/package_for_npm.sh
 
 export STANDALONE_PACKAGE_NAME="pact-mock-service-$PACKAGE_VERSION-linux-x86"
 export NPM_PACKAGE_NAME='pact-mock-service-linux-x86'
 export SUFFIX='linux-x86'
+export EXTENSION='tar.gz'
 scripts/package_for_npm.sh
 
 export STANDALONE_PACKAGE_NAME="pact-mock-service-$PACKAGE_VERSION-linux-x86_64"
 export NPM_PACKAGE_NAME='pact-mock-service-linux-x86_64'
 export SUFFIX='linux-x86_64'
+export EXTENSION='tar.gz'
 scripts/package_for_npm.sh
 
