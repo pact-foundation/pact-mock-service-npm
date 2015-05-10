@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 mkdir -p build
 cd build
 if [ ! -d "pact-mock_service" ]; then
@@ -8,8 +11,10 @@ else
   cd pact-mock_service
   git checkout master
   git pull origin master
+  git fetch --tags
 fi
 
+git tag
 git checkout tags/v${GEM_VERSION}
 
 bundle

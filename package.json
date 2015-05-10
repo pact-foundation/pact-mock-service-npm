@@ -1,6 +1,6 @@
 {
-  "name": "pact-mock-service-win",
-  "version": "0.5.1-1",
+  "name": "pact-mock-service-win32",
+  "version": "0.5.2-1",
   "description": "Pact mock service",
   "main": "bin/pact-mock-service",
   "directories": {
