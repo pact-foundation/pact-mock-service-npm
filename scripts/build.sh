@@ -11,7 +11,7 @@ scripts/build_standalone_packages.sh
 export STANDALONE_PACKAGE_NAME="pact-mock-service-$PACKAGE_VERSION-win32"
 export NPM_PACKAGE_NAME='pact-mock-service-win32'
 export SUFFIX='win32'
-export EXTENSION='.zip'
+export EXTENSION='zip'
 scripts/package_for_npm.sh
 
 export STANDALONE_PACKAGE_NAME="pact-mock-service-$PACKAGE_VERSION-osx"
