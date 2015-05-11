@@ -2,13 +2,13 @@
   "name": "pact-mock-service-win32",
   "version": "0.5.2-1",
   "description": "Pact mock service",
-  "main": "bin/pact-mock-service",
+  "main": "bin/pact-mock-service.bat",
   "directories": {
     "lib": "lib",
     "bin": "bin"
   },
   "bin": {
-    "pact-mock-service": "./bin/pact-mock-service"
+    "pact-mock-service": "./bin/pact-mock-service.bat"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
