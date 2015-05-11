@@ -11,6 +11,7 @@
     "pact-mock-service": "./bin/pact-mock-service"
   },
   "scripts": {
+    "preinstall": "node scripts/preinstall.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/bethesque/pact-mock_service/issues"
   },
-  "homepage": "https://github.com/bethesque/pact-mock-service-npm"
+  "homepage": "https://github.com/bethesque/pact-mock-service-npm",
+  "dependencies": {
+    "npm": "^2.9.1"
+  }
 }
