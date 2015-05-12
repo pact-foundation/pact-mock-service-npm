@@ -1,5 +1,5 @@
 {
-  "name": "pact-mock-service-osx",
+  "name": "pact-mock-service-darwin",
   "version": "0.5.2-1",
   "description": "Pact mock service",
   "main": "bin/pact-mock-service",

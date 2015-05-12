@@ -14,7 +14,6 @@ else
   git fetch --tags
 fi
 
-git tag
 git checkout tags/v${GEM_VERSION}
 
 bundle
