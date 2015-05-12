@@ -1,11 +1,14 @@
 # Pact Mock Service for NPM
 
-This is a standalone executable packaged from the Ruby [pact-mock-service-gem] gem.
+Installation wrapper for standalone platform-specific executables packaged from the Ruby [pact-mock-service-gem] gem. 
+
+On install, this package selects and installs the correct [pact-mock-service-gem] executable for your environment.
+
 
 ## Usage
 
-    $ npm install pact-mock-service-win
-    $ node_modules/pact-mock-service-win/bin/pact-mock-service --port 1234
+    $ npm install pact-mock-service	
+    $ node_modules/pact-mock-service/bin/pact-mock-service --port 1234
 
 # Known issues
 
