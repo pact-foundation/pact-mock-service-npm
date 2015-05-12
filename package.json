@@ -3,7 +3,7 @@
   "version": "0.5.2-1",
   "description": "Pact mock service install package. Installing this will install an executable appropriate for your platform.",
   "scripts": {
-    "preinstall": "node scripts/preinstall.js",
+    "postinstall": "node scripts/platform-deps.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
