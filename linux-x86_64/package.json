@@ -1,5 +1,5 @@
 {
-  "name": "pact-mock-service-linux-x86_64",
+  "name": "pact-mock-service-linux-x64",
   "version": "0.5.2-1",
   "description": "Pact mock service",
   "main": "bin/pact-mock-service",
