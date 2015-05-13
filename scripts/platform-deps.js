@@ -1,4 +1,4 @@
-//Using preinstall hook, download and install the correct platform specific package for the mock server
+//Download and install the correct platform specific package for the mock server
 var npm = require("npm");
 var arch = "";
 npm.load(function(er, npm) {
@@ -7,7 +7,9 @@ npm.load(function(er, npm) {
     arch = '-' + process.arch;
   }
   console.log("Installing Pact mock server for " + process.platform + arch);
-  npm.commands.install(['pact-mock-service-' + process.platform + arch], function(er, data) {
+
+  //Install npm into the wrapping pact-mock-service node_modules directory to avoid nested node_modules
+  npm.commands.install("../../", ['pact-mock-service-' + process.platform + arch], function(er, data) {
     if(er) {
       console.log(er);
       process.exit(1);
