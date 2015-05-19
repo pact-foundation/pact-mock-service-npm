@@ -4,11 +4,21 @@ Installation wrapper for standalone platform-specific executables packaged from 
 
 On install, this package selects and installs the correct [pact-mock-service-gem] executable for your environment.
 
+At the moment, this service simply downloads the appropriate platform-specific and installs it alongside `pact-mock-service` inside the node_modules directory. In the longer term however, this should transparently be installed within `pact-mock-service`.
+
+In the meantime however, below is a list of platform specific NPMs that may be downloaded on your behalf depending on your environment. 
+
+Substitute the following npm names in `[PLATFORM_SPECIFIC_NPM]` placeholder in the usage instructions below:
+
+* OS X - `pact-mock-service-darwin`
+* Windows - `pact-mock-service-win32`
+* Linux 32-bit - `pact-mock-service-linux-ia32`
+* Linux 64-bit - `pact-mock-service-linux-x64`
 
 ## Usage
 
     $ npm install pact-mock-service	
-    $ node_modules/pact-mock-service/bin/pact-mock-service --port 1234
+    $ node_modules/[PLATFORM_SPECIFIC_NPM]/bin/pact-mock-service --port 1234
 
 # Known issues
 
