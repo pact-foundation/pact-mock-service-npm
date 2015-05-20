@@ -1,6 +1,6 @@
 {
   "name": "pact-mock-service",
-  "version": "0.5.2-2",
+  "version": "0.5.2-3",
   "description": "Pact mock service install package. Installing this will install an executable appropriate for your platform.",
   "scripts": {
     "postinstall": "node scripts/platform-deps.js",
