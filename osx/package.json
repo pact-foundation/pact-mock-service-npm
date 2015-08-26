@@ -1,6 +1,6 @@
 {
   "name": "pact-mock-service-darwin",
-  "version": "0.5.2-2",
+  "version": "0.7.1-1",
   "description": "Pact mock service",
   "main": "bin/pact-mock-service",
   "directories": {
