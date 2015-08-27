@@ -1,16 +1,16 @@
 # Pact Mock Service for NPM
 
-Installation wrapper for standalone platform-specific executables packaged from the Ruby [pact-mock-service-gem] gem. 
+Installation wrapper for standalone platform-specific executables packaged from the Ruby [pact-mock-service-gem] gem.
 
 On install, this package selects and installs the correct [pact-mock-service-gem] executable for your environment.
 
-At the moment, this service simply downloads the appropriate platform-specific and installs it alongside `pact-mock-service` inside the node_modules directory. In the longer term however, this should transparently be installed within `pact-mock-service`.
+This node module downloads the appropriate platform-specific and installs it alongside `pact-mock-service` inside the node_modules directory.
 
 In the meantime however, below is a list of platform specific NPMs that may be downloaded on your behalf depending on your environment.  **You will still need to install Ruby for this to work, suggest to install version 1.9.3**.
 
 ## Usage
 
-    $ npm install pact-mock-service	
+    $ npm install pact-mock-service
     $ node_modules/.bin/pact-mock-service --port 1234
 
 # Known issues

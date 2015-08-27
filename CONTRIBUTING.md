@@ -10,6 +10,7 @@
 
 ## Publishing
 
+    $ npm publish dist/pact-mock-service-win32.tar.gz
     $ npm publish dist/pact-mock-service-osx.tar.gz
     $ npm publish dist/pact-mock-service-linux-x86.tar.gz
     $ npm publish dist/pact-mock-service-linux-x86_64.tar.gz
