@@ -1,6 +1,6 @@
 {
-  "name": "pact-mock-service-linux-x86",
-  "version": "0.2.3-rc3",
+  "name": "pact-mock-service-linux-ia32",
+  "version": "0.7.1-1",
   "description": "Pact mock service",
   "main": "bin/pact-mock-service",
   "directories": {
