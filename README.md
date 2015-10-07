@@ -2,7 +2,7 @@
 
 Installation wrapper for standalone platform-specific executables packaged from the Ruby [pact-mock-service-gem] gem.
 
-On install, this package selects and installs the correct [pact-mock-service-gem] executable for your environment.
+On install, this package selects and installs the correct [pact-mock-service-standalone] executable for your environment.
 
 This node module downloads the appropriate platform-specific and installs it alongside `pact-mock-service` inside the node_modules directory.
 
@@ -36,4 +36,4 @@ npm WARN excluding symbolic link lib/ruby/lib/libyaml.dylib -> libyaml-0.2.dylib
 ```
 
 
-[pact-mock-service-gem]: https://github.com/bethesque/pact-mock_service
+[pact-mock-service-standalone]: https://github.com/bethesque/pact-mock_service
