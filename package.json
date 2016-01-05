@@ -29,5 +29,7 @@
   },
   "homepage": "https://github.com/bethesque/pact-mock-service-npm",
   "dependencies": {},
-  "preferGlobal": "true"
+  "bin": {
+    "pact-mock-service": "./node_modules/bin/pact-mock-service"
+  }
 }
