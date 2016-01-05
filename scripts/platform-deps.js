@@ -15,16 +15,17 @@ console.log("Installing Pact mock server for " + packageName);
 // Install standalone package to node_modules, use exec to prevent --save or --save-dev flags to be sent.  DON'T USE `npm.commands.install`
 exec('npm install ' + packageName + '@' + pkg.version, {cwd: path.resolve(__dirname, '..')});
 
-	// if (error) {
-	// 	console.error(error);
-	// 	process.exit(1);
-	// }
-	console.log("Pact mock server for " + packageName + " installed successfully.");
+// if (error) {
+// 	console.error(error);
+// 	process.exit(1);
+// }
 
-	// Specify the bin path of the downloaded package in the package.json of pact-mock-service
-	var p = require.resolve(packageName);
-	// Setting path to be relative to project's package.json
-	pkg.bin = { 'pact-mock-service' : './' + path.relative(path.dirname(pkgPath), p).split(path.sep).join('/')};
+// Specify the bin path of the downloaded package in the package.json of pact-mock-service
+var p = require.resolve(packageName);
+// Setting path to be relative to project's package.json
+pkg.bin = {'pact-mock-service': './' + path.relative(path.dirname(pkgPath), p)/*.split(path.sep).join('/')*/};
 
-	// Write it to package.json
-	fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
+// Write it to package.json
+fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
+
+console.log("Pact mock server for " + packageName + " installed successfully.");
