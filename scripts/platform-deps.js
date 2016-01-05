@@ -21,11 +21,9 @@ exec('npm install ' + packageName + '@' + pkg.version, {cwd: path.resolve(__dirn
 	console.log("Pact mock server for " + packageName + " installed successfully.");
 
 	// Specify the bin path of the downloaded package in the package.json of pact-mock-service
-	var p = path.resolve(__dirname, '../node_modules/' + packageName);
-	var bin = require(path.join(p, 'package.json')).bin;
+	var p = require.resolve(packageName);
 	// Setting path to be relative to project's package.json
-	bin['pact-mock-service'] = './' + path.relative(path.dirname(pkgPath), path.resolve(p, bin['pact-mock-service']));
-	pkg.bin = bin;
+	pkg.bin = {'pact-mock-service' : './' + path.relative(path.dirname(pkgPath), p).split(path.sep).join('/')};
 
 	// Write it to package.json
 	fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
