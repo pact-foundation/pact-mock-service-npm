@@ -4,6 +4,9 @@
   "description": "Pact mock service install package. Installing this will install an executable appropriate for your platform.",
   "os" : [ "darwin", "linux" , "win32"],
   "cpu" : [ "x64", "ia32" ],
+  "engine": {
+    "node": ">=0.12.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bethesque/pact-mock-service-npm"
@@ -27,6 +30,12 @@
   },
   "homepage": "https://github.com/bethesque/pact-mock-service-npm",
   "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "nodemon": "^1.4.1",
+    "sinon": "^1.15.4"
+  },
   "optionalDependencies": {
     "pact-mock-service-win32": "0.7.2-1",
     "pact-mock-service-darwin": "0.7.2-1",
@@ -37,5 +46,8 @@
     "pact-mock-service": "./bin/pact-mock-service"
   },
   "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec test/**/*.spec.js --timeout 10000",
+    "watch": "./node_modules/.bin/nodemon -x npm test",
+    "prepublish": "npm test"
   }
 }
