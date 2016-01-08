@@ -11,7 +11,7 @@ if (process.platform === 'linux') {
 }
 var packageName = 'pact-mock-service-' + process.platform + arch;
 
-exec(require.resolve(packageName), {cwd: path.resolve(__dirname, '..')}, function(error, stdout, stderr){
+exec(require.resolve(packageName) + ' ' + process.argv.slice(1).join(' '), {cwd: path.resolve(__dirname, '..')}, function(error, stdout, stderr){
 	if (error) {
 		console.error(error);
 		process.exit(1);
