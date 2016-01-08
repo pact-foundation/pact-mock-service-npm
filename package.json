@@ -2,10 +2,8 @@
   "name": "pact-mock-service",
   "version": "0.7.2-1",
   "description": "Pact mock service install package. Installing this will install an executable appropriate for your platform.",
-  "scripts": {
-    "preinstall": "node scripts/platform-deps.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "os" : [ "darwin", "linux" , "win32"],
+  "cpu" : [ "x64", "ia32" ],
   "repository": {
     "type": "git",
     "url": "https://github.com/bethesque/pact-mock-service-npm"
@@ -29,7 +27,15 @@
   },
   "homepage": "https://github.com/bethesque/pact-mock-service-npm",
   "dependencies": {},
+  "optionalDependencies": {
+    "pact-mock-service-win32": "0.7.2-1",
+    "pact-mock-service-darwin": "0.7.2-1",
+    "pact-mock-service-linux-ia32": "0.7.2-1",
+    "pact-mock-service-linux-x64": "0.7.2-1"
+  },
   "bin": {
-    "pact-mock-service": "./node_modules/.bin/pact-mock-service"
+    "pact-mock-service": "./bin/pact-mock-service"
+  },
+  "scripts": {
   }
 }

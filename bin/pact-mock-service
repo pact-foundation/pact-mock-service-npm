@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+'use strict';
+
+var exec = require('child_process').exec,
+	path = require('path');
+
+// figure out the package name based on current platform
+var arch = "";
+if (process.platform === 'linux') {
+	arch = '-' + process.arch;
+}
+var packageName = 'pact-mock-service-' + process.platform + arch;
+
+exec(require.resolve(packageName), {cwd: path.resolve(__dirname, '..')}, function(error, stdout, stderr){
+	if (error) {
+		console.error(error);
+		process.exit(1);
+	}
+});
