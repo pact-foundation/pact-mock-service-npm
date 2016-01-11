@@ -3,7 +3,7 @@
 
 var cp = require('child_process'),
 	path = require('path');
-const isWindows = process.platform === 'win32';
+var isWindows = process.platform === 'win32';
 
 // figure out the package name based on current platform
 var arch = "";
@@ -39,8 +39,15 @@ instance.stderr.setEncoding('utf8');
 instance.stderr.on('data', console.log);
 instance.on('error', console.error);
 
+/*instance.on('close', function (code) {
+	if (code !== 0) {
+		console.warn('Pact exited with code ' + code + '.');
+	}
+	exit();
+});*/
+
 // Kill process on node exit
-var exit = function () {
+function exit() {
 	if (instance) {
 		console.info('Exiting Pact.');
 		instance.removeAllListeners();
@@ -55,11 +62,6 @@ var exit = function () {
 	process.removeListener('SIGINT', exit);
 	process.exit();
 };
+
 process.on('exit', exit);
 process.on('SIGINT', exit);
-instance.on('close', function (code) {
-	if (code !== 0) {
-		console.warn('Pact exited with code ' + code + '.');
-	}
-	exit();
-});

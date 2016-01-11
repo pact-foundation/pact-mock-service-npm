@@ -5,16 +5,19 @@ var expect = require('chai').expect;
 var pactPath = './../bin/pact-mock-service';
 
 describe("Pact Mock Service Spec", function () {
-	var server;
+	var instance;
 
 	afterEach(function (done) {
+		/*if(instance) {
+			process.kill(instance.pid);
+		}*/
 		done();
 	});
 
 	describe("Start Pact", function () {
 		context("when no options are set", function () {
 			it("should start correctly with defaults", function (done) {
-				cp.exec(pactPath)
+				//instance = cp.spawn(pactPath);
 				done();
 			});
 		});
