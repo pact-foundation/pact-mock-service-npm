@@ -4,7 +4,6 @@
   "description": "Pact mock service",
   "os" : [ "win32"],
   "cpu" : [ "x64", "ia32" ],
-  "main": "bin/pact-mock-service.bat",
   "directories": {
     "lib": "lib",
     "bin": "bin"

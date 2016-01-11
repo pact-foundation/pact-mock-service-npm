@@ -4,7 +4,6 @@
   "description": "Pact mock service",
   "os" : [ "linux" ],
   "cpu" : [ "ia32" ],
-  "main": "bin/pact-mock-service",
   "directories": {
     "lib": "lib",
     "bin": "bin"
