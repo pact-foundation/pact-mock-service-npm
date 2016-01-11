@@ -2,7 +2,8 @@
   "name": "pact-mock-service-linux-x64",
   "version": "0.7.2-1",
   "description": "Pact mock service",
-  "main": "bin/pact-mock-service",
+  "os" : [ "linux" ],
+  "cpu" : [ "x64" ],
   "directories": {
     "lib": "lib",
     "bin": "bin"

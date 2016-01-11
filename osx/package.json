@@ -2,7 +2,8 @@
   "name": "pact-mock-service-darwin",
   "version": "0.7.2-1",
   "description": "Pact mock service",
-  "main": "bin/pact-mock-service",
+  "os" : [ "darwin" ],
+  "cpu" : [ "x64", "ia32" ],
   "directories": {
     "lib": "lib",
     "bin": "bin"

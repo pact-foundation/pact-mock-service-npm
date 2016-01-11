@@ -1,0 +1,67 @@
+#!/usr/bin/env node
+'use strict';
+
+var cp = require('child_process'),
+	path = require('path');
+var isWindows = process.platform === 'win32';
+
+// figure out the package name based on current platform
+var arch = "";
+if (process.platform === 'linux') {
+	arch = '-' + process.arch;
+}
+var packageName = 'pact-mock-service-' + process.platform + arch;
+
+var file,
+	args = [],
+	opts = {
+		cwd: path.resolve(require.resolve(packageName), '..'),
+		detached: true
+	},
+	cmd = ['pact-mock-service'].concat(process.argv.slice(2)).join(' ');
+
+if (isWindows) {
+	file = 'cmd.exe';
+	args = ['/s', '/c', cmd];
+	opts.windowsVerbatimArguments = true;
+	opts.detached = false;
+} else {
+	cmd = "./" + cmd;
+	file = '/bin/sh';
+	args = ['-c', cmd];
+}
+
+var instance = cp.spawn(file, args, opts);
+console.info('Creating Pact with PID: ' + instance.pid);
+instance.stdout.setEncoding('utf8');
+instance.stdout.on('data', console.log);
+instance.stderr.setEncoding('utf8');
+instance.stderr.on('data', console.log);
+instance.on('error', console.error);
+
+/*instance.on('close', function (code) {
+	if (code !== 0) {
+		console.warn('Pact exited with code ' + code + '.');
+	}
+	exit();
+});*/
+
+// Kill process on node exit
+function exit() {
+	if (instance) {
+		console.info('Exiting Pact.');
+		instance.removeAllListeners();
+		if (isWindows) {
+			cp.execSync('taskkill /f /t /pid ' + instance.pid);
+		} else {
+			process.kill(-instance.pid, 'SIGKILL');
+		}
+		instance = undefined;
+	}
+	process.removeListener('exit', exit);
+	process.removeListener('SIGINT', exit);
+	process.exit();
+};
+
+process.on('exit', exit);
+process.on('SIGINT', exit);
