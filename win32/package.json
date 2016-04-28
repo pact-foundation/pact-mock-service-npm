@@ -1,6 +1,6 @@
 {
-  "name": "pact-mock-service-win32",
-  "version": "0.7.2-1",
+  "name": "@pact-foundation/pact-mock-service-win32",
+  "version": "0.8.2",
   "description": "Pact mock service",
   "os" : [ "win32"],
   "cpu" : [ "x64", "ia32" ],

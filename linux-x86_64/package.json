@@ -1,6 +1,6 @@
 {
-  "name": "pact-mock-service-linux-x64",
-  "version": "0.7.2-1",
+  "name": "@pact-foundation/pact-mock-service-linux-x64",
+  "version": "0.8.2",
   "description": "Pact mock service",
   "os" : [ "linux" ],
   "cpu" : [ "x64" ],
