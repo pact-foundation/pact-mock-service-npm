@@ -1,3 +1,5 @@
+<img src="https://github.com/pact-foundation/pact-logo/blob/master/media/logo-black.png" width="200">
+
 # Pact Mock Service for NPM
 
 Installation wrapper for standalone platform-specific executables packaged from the Ruby [pact-mock-service-gem] gem.
