@@ -7,7 +7,7 @@ echo "Packaging $STANDALONE_PACKAGE_NAME.$EXTENSION for npm as $NPM_PACKAGE_NAME
 mkdir -p dist
 
 cd build
-cp pact-mock_service/pkg/pact-mock-service-* .
+cp pact-mock_service-${GEM_VERSION}/pkg/pact-mock-service-* .
 rm -rf $STANDALONE_PACKAGE_NAME
 
 if [ $EXTENSION = "zip" ]; then
