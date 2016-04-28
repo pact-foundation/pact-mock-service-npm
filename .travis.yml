@@ -1,0 +1,29 @@
+language: ruby
+rvm: 2.1
+env:
+  npm_key:
+    - secure: F5E6y07l0F/CLJH6uuUIjDE1H0Khe8/slzQgcO2LobeXpzLpO8S9LxYZcJFMzpvAb16J4txDIY5zPECm2mS32eQzlTDgOE7xykGQCWy5dE88Z7g2WOqCwiN7r3hTtyCDSvlWDD8YIg+LUg5O+eA8clH/beog10QnPLsUJcNq6oE=
+before_deploy:
+- echo "//registry.npmjs.org/:_authToken=${npm_key}" >> .npmrc
+- scripts/build.sh
+deploy:
+- provider: script
+  script: npm publish dist/pact-mock-service-darwin.tar.gz --access public
+  on:
+    branch: master
+    tags: true
+- provider: script
+  script: npm publish dist/pact-mock-service-linux-ia32.tar.gz --access public
+  on:
+    branch: master
+    tags: true
+- provider: script
+  script: npm publish dist/pact-mock-service-linux-x64.tar.gz --access public
+  on:
+    branch: master
+    tags: true
+- provider: script
+  script: npm publish dist/pact-mock-service-win32.tar.gz --access public
+  on:
+    branch: master
+    tags: true
