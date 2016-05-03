@@ -3,6 +3,10 @@ rvm: 2.1
 env:
   global:
     - secure: dGmVBMCm8KfY1WjzbrXcBg0BL4tB1buTv7UVnJtNl19bAqe9acT71LnoPTOw7eitnu3UW5rgvJfEBT2TEJOjnLpaqmEiK8Oa8FboklG281fsMevrabz+y2ujc0TIQfsNNbFBahE82SacwjbZ4EM5iSR9En/cExqUwQ1VjDTW/Bs=
+install:
+- npm install
+before_script:
+- npm test
 script:
 - scripts/build.sh
 before_deploy:
@@ -29,6 +33,12 @@ deploy:
 - provider: script
   skip_cleanup: true
   script: npm publish build/pact-mock-service-win32/ --access public
+  on:
+    branch: master
+    tags: true
+- provider: script
+  skip_cleanup: true
+  script: npm publish . --access public
   on:
     branch: master
     tags: true
