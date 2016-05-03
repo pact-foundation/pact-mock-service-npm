@@ -10,25 +10,27 @@ before_deploy:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: npm publish build/pact-mock-service-darwin --access public
+  script: npm publish build/pact-mock-service-darwin/ --access public
   on:
     branch: master
     tags: true
 - provider: script
   skip_cleanup: true
-  script: npm publish build/pact-mock-service-linux-ia32 --access public
+  script: npm publish build/pact-mock-service-linux-ia32/ --access public
   on:
     branch: master
     tags: true
 - provider: script
   skip_cleanup: true
-  script: npm publish build/pact-mock-service-linux-x64 --access public
+  script: npm publish build/pact-mock-service-linux-x64/ --access public
   on:
     branch: master
     tags: true
 - provider: script
   skip_cleanup: true
-  script: npm publish build/pact-mock-service-win32 --access public
+  script: npm publish build/pact-mock-service-win32/ --access public
   on:
     branch: master
     tags: true
+after_failure:
+- find . -iname '*.log' -print0 | xargs -0 cat
