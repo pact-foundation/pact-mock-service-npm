@@ -14,31 +14,31 @@ before_deploy:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: npm publish build/pact-mock-service-darwin/ --access public
+  script: npm publish build/pact-mock-service-darwin/
   on:
     branch: master
     tags: true
 - provider: script
   skip_cleanup: true
-  script: npm publish build/pact-mock-service-linux-ia32/ --access public
+  script: npm publish build/pact-mock-service-linux-ia32/
   on:
     branch: master
     tags: true
 - provider: script
   skip_cleanup: true
-  script: npm publish build/pact-mock-service-linux-x64/ --access public
+  script: npm publish build/pact-mock-service-linux-x64/
   on:
     branch: master
     tags: true
 - provider: script
   skip_cleanup: true
-  script: npm publish build/pact-mock-service-win32/ --access public
+  script: npm publish build/pact-mock-service-win32/
   on:
     branch: master
     tags: true
 - provider: script
   skip_cleanup: true
-  script: npm publish . --access public
+  script: npm publish .
   on:
     branch: master
     tags: true
