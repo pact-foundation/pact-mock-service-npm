@@ -2,7 +2,7 @@
 
 var cp = require('child_process');
 var expect = require('chai').expect;
-var pactPath = './../bin/pact-mock-service';
+var pactPath = './pact-mock-service';
 
 describe("Pact Mock Service Spec", function () {
 	var instance;

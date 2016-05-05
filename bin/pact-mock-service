@@ -6,19 +6,13 @@ var cp = require('child_process'),
 var isWindows = process.platform === 'win32';
 
 // figure out the package name based on current platform
-var arch = "";
-if (process.platform === 'linux') {
-	arch = '-' + process.arch;
-}
-var packageName = '@pact-foundation/pact-mock-service-' + process.platform + arch;
-
 var file,
 	args = [],
 	opts = {
-		cwd: path.resolve(require.resolve(packageName), '..'),
+		cwd: path.resolve(__dirname, 'bin'),
 		detached: true
 	},
-	cmd = ['pact-mock-service'].concat(process.argv.slice(2)).join(' ');
+	cmd = ['pact-mock-service' + (isWindows ? '.cmd' : '')].concat(process.argv.slice(2)).join(' ');
 
 if (isWindows) {
 	file = 'cmd.exe';
@@ -39,13 +33,6 @@ instance.stderr.setEncoding('utf8');
 instance.stderr.on('data', console.log);
 instance.on('error', console.error);
 
-/*instance.on('close', function (code) {
-	if (code !== 0) {
-		console.warn('Pact exited with code ' + code + '.');
-	}
-	exit();
-});*/
-
 // Kill process on node exit
 function exit() {
 	if (instance) {
@@ -61,7 +48,7 @@ function exit() {
 	process.removeListener('exit', exit);
 	process.removeListener('SIGINT', exit);
 	process.exit();
-};
+}
 
 process.on('exit', exit);
 process.on('SIGINT', exit);

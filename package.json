@@ -41,7 +41,7 @@
   },
   "main": "./bin/pact-mock-service",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec test/**/*.spec.js --timeout 10000",
+    "test": "./node_modules/.bin/mocha -R spec bin/**/*.spec.js --timeout 10000",
     "watch": "./node_modules/.bin/nodemon -x npm test",
     "prepublish": "npm test"
   }

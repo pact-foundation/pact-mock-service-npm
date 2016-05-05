@@ -3,18 +3,22 @@ rvm: 2.1
 env:
   global:
     - secure: dGmVBMCm8KfY1WjzbrXcBg0BL4tB1buTv7UVnJtNl19bAqe9acT71LnoPTOw7eitnu3UW5rgvJfEBT2TEJOjnLpaqmEiK8Oa8FboklG281fsMevrabz+y2ujc0TIQfsNNbFBahE82SacwjbZ4EM5iSR9En/cExqUwQ1VjDTW/Bs=
+before_install:
+- echo "@pact-foundation:registry=https://registry.npmjs.org/" > .npmrc
+- echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> .npmrc
+- echo "//registry.npmjs.org/:username=pact-foundation" >> .npmrc
+- echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> .npmrc
+- echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
 install:
 - npm install
 before_script:
 - npm test
 script:
 - scripts/build.sh
-before_deploy:
-- echo "@pact-foundation:registry=https://registry.npmjs.org/" > .npmrc
-- echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> .npmrc
-- echo "//registry.npmjs.org/:username=pact-foundation" >> .npmrc
-- echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> .npmrc
-- echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
+- cp .npmrc build/pact-mock-service-darwin/
+- cp .npmrc build/pact-mock-service-win32/
+- cp .npmrc build/pact-mock-service-linux-ia32/
+- cp .npmrc build/pact-mock-service-linux-x64/
 deploy:
 - provider: script
   skip_cleanup: true
@@ -46,5 +50,3 @@ deploy:
   on:
     branch: master
     tags: true
-after_failure:
-- find . -iname '*.log' -print0 | xargs -0 cat
