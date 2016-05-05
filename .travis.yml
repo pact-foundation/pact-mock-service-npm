@@ -22,25 +22,16 @@ before_deploy:
 deploy:
 - provider: script
   skip_cleanup: true
-  script:
-    - cd build/pact-mock-service-darwin/
-    - npm publish .
+  script: cd build/pact-mock-service-darwin/ && npm publish .
 - provider: script
   skip_cleanup: true
-  script:
-    - cd build/pact-mock-service-linux-ia32/
-    - npm publish .
+  script: cd build/pact-mock-service-linux-ia32/ && npm publish .
 - provider: script
   skip_cleanup: true
-  script:
-    - cd build/pact-mock-service-linux-x64/
-    - npm publish .
+  script: cd build/pact-mock-service-linux-x64/ && npm publish .
 - provider: script
   skip_cleanup: true
-  script:
-    - cd build/pact-mock-service-win32/
-    - npm publish .
+  script: cd build/pact-mock-service-win32/ && npm publish .
 - provider: script
   skip_cleanup: true
-  script: 
-    - npm publish .
+  script: npm publish .
