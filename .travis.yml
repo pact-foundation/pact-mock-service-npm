@@ -15,6 +15,7 @@ before_deploy:
 - echo "//registry.npmjs.org/:username=pact-foundation" >> .npmrc
 - echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> .npmrc
 - echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
+- cat .npmrc
 - cp .npmrc build/pact-mock-service-darwin/
 - cp .npmrc build/pact-mock-service-win32/
 - cp .npmrc build/pact-mock-service-linux-ia32/
