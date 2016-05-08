@@ -2,7 +2,7 @@ language: ruby
 rvm: 2.1
 env:
   global:
-    - secure: QEplQuDirqkuwWEQTvRbnf264nR/f8u8i4HyEPybyutjzcR3urNruOaFGIVQoavhijF3fDPHIJyB0pMF0VGLTlPwrmuT35gCh3cEPJbunNZ8efofbvsO7RP4mcwVyT7m/hbayTcsSXe+cu8//BtNh9f6ykCkHmZ6d6x8l6XVJoQ=
+    - secure: Kc5j0fwV/6zHeENXidold1kRCHN7BKVY88Oe+0nNaqlJeaHfm+TUDTrhNghtYk2cEf1hM3SqgUozJvqGGWv+VkmMewv3UBWn0q21qLpyn8NgscnYAATrR4mEZMzq0ZWA63l/6t2l8v8wK7Y15PnbK990u5BLpLyTSqubfLXcx8k=
 install:
 - npm install
 before_script:
@@ -15,7 +15,6 @@ before_deploy:
 - echo "//registry.npmjs.org/:username=pact-foundation" >> .npmrc
 - echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> .npmrc
 - echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
-- cat .npmrc
 - cp .npmrc build/pact-mock-service-darwin/
 - cp .npmrc build/pact-mock-service-win32/
 - cp .npmrc build/pact-mock-service-linux-ia32/
