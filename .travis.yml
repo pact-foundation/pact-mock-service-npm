@@ -13,7 +13,6 @@ script:
 before_deploy:
 - echo "@pact-foundation:registry=https://registry.npmjs.org/" > .npmrc
 - echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> .npmrc
-- echo "//registry.npmjs.org/:_password=${NPM_PASSWORD}" >> .npmrc
 - echo "//registry.npmjs.org/:username=pact-foundation" >> .npmrc
 - echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> .npmrc
 - echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
@@ -24,16 +23,13 @@ before_deploy:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: cd build/pact-mock-service-darwin/ && npm publish .
+  script: cd build/pact-mock-service-darwin/ && npm publish . --access public
 - provider: script
   skip_cleanup: true
-  script: cd build/pact-mock-service-linux-ia32/ && npm publish .
+  script: cd build/pact-mock-service-linux-ia32/ && npm publish . --access public
 - provider: script
   skip_cleanup: true
-  script: cd build/pact-mock-service-linux-x64/ && npm publish .
+  script: cd build/pact-mock-service-linux-x64/ && npm publish . --access public
 - provider: script
   skip_cleanup: true
-  script: cd build/pact-mock-service-win32/ && npm publish .
-- provider: script
-  skip_cleanup: true
-  script: npm publish .
+  script: cd build/pact-mock-service-win32/ && npm publish . --access public
