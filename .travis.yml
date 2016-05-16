@@ -40,5 +40,8 @@ deploy:
 - provider: script
   skip_cleanup: true
   script: npm publish build/pact-mock-service-win32/ --access public
+- provider: script
+  skip_cleanup: true
+  script: npm publish . --access public
 after_failure:
 - find . -iname '*.log' -print0 | xargs -0 cat
