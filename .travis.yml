@@ -5,7 +5,6 @@ dist: trusty
 env:
   global:
   - secure: Kc5j0fwV/6zHeENXidold1kRCHN7BKVY88Oe+0nNaqlJeaHfm+TUDTrhNghtYk2cEf1hM3SqgUozJvqGGWv+VkmMewv3UBWn0q21qLpyn8NgscnYAATrR4mEZMzq0ZWA63l/6t2l8v8wK7Y15PnbK990u5BLpLyTSqubfLXcx8k=
-  - secure: UVZQf9xGW3CDvUSpnraw7/MWGiYLFaMPoPNNBuHwrugsWihu0abFbUpRICLA3+iYO6bl1ngwy8WAtL7auAPCm9lR4zGYuIB0cTaJtQ95hHCTHK/9ix6LVcVxfvKwzWWY3Sg3s3xRQfNzrtbufzNowkooQrnHtgrlYbs4RM9lnTA=
 cache:
   apt: true
 before_install:
@@ -31,17 +30,32 @@ deploy:
 - provider: script
   skip_cleanup: true
   script: npm publish build/pact-mock-service-darwin/ --access public
+  on:
+    branch: master
+    tags: true
 - provider: script
   skip_cleanup: true
   script: npm publish build/pact-mock-service-linux-ia32/ --access public
+  on:
+    branch: master
+    tags: true
 - provider: script
   skip_cleanup: true
   script: npm publish build/pact-mock-service-linux-x64/ --access public
+  on:
+    branch: master
+    tags: true
 - provider: script
   skip_cleanup: true
   script: npm publish build/pact-mock-service-win32/ --access public
+  on:
+    branch: master
+    tags: true
 - provider: script
   skip_cleanup: true
   script: npm publish . --access public
+  on:
+    branch: master
+    tags: true
 after_failure:
 - find . -iname '*.log' -print0 | xargs -0 cat
