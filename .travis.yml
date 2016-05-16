@@ -11,7 +11,7 @@ before_install:
 - curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 - sudo apt-get install -y nodejs build-essential
 install:
-- npm install
+- npm install --ignore-scripts
 before_script:
 - npm test
 script:
