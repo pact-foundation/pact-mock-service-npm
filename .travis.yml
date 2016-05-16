@@ -1,9 +1,16 @@
 language: ruby
 rvm: 2.1
+sudo: required
+dist: trusty
 env:
   global:
   - secure: Kc5j0fwV/6zHeENXidold1kRCHN7BKVY88Oe+0nNaqlJeaHfm+TUDTrhNghtYk2cEf1hM3SqgUozJvqGGWv+VkmMewv3UBWn0q21qLpyn8NgscnYAATrR4mEZMzq0ZWA63l/6t2l8v8wK7Y15PnbK990u5BLpLyTSqubfLXcx8k=
   - secure: UVZQf9xGW3CDvUSpnraw7/MWGiYLFaMPoPNNBuHwrugsWihu0abFbUpRICLA3+iYO6bl1ngwy8WAtL7auAPCm9lR4zGYuIB0cTaJtQ95hHCTHK/9ix6LVcVxfvKwzWWY3Sg3s3xRQfNzrtbufzNowkooQrnHtgrlYbs4RM9lnTA=
+cache:
+  apt: true
+before_install:
+- curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+- sudo apt-get install -y nodejs build-essential
 install:
 - npm install
 before_script:
