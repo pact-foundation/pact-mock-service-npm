@@ -1,6 +1,6 @@
 {
 	"name": "@pact-foundation/pact-mock-service-linux-ia32",
-	"version": "0.8.7",
+	"version": "0.9.0",
 	"description": "Pact mock service",
 	"os": [
 		"linux"
@@ -11,7 +11,7 @@
 	"bin": {
 		"pact-mock-service": "./bin/pact-mock-service"
 	},
-	"main": "./pact-mock-service",
+	"main": "./pact-mock-service.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

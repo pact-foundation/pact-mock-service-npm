@@ -12,10 +12,10 @@ before_install:
 - sudo apt-get install -y nodejs build-essential
 install:
 - npm install --ignore-scripts
-before_script:
-- npm test
 script:
-- scripts/build.sh
+- npm run build
+after_script:
+- npm test
 before_deploy:
 - echo "@pact-foundation:registry=https://registry.npmjs.org/" > .npmrc
 - echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> .npmrc

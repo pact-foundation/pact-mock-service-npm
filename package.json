@@ -1,6 +1,6 @@
 {
   "name": "@pact-foundation/pact-mock-service",
-  "version": "0.8.7",
+  "version": "0.9.0",
   "description": "Pact mock service wrapper package. Installing this will install an executable appropriate for your platform.",
   "os" : [ "darwin", "linux" , "win32"],
   "cpu" : [ "x64", "ia32" ],
@@ -40,19 +40,19 @@
     "sinon": "^1.15.4"
   },
   "optionalDependencies": {
-    "@pact-foundation/pact-mock-service-linux-ia32": "0.8.7",
-    "@pact-foundation/pact-mock-service-linux-x64": "0.8.7",
-    "@pact-foundation/pact-mock-service-win32": "0.8.7",
-    "@pact-foundation/pact-mock-service-darwin": "0.8.7"
+    "@pact-foundation/pact-mock-service-linux-ia32": "0.9.0",
+    "@pact-foundation/pact-mock-service-linux-x64": "0.9.0",
+    "@pact-foundation/pact-mock-service-win32": "0.9.0",
+    "@pact-foundation/pact-mock-service-darwin": "0.9.0"
   },
-  "bin": {
-    "pact-mock-service": "./bin/pact-mock-service"
-  },
-  "main": "./bin/pact-mock-service",
+  "main": "./index.js",
   "scripts": {
+    "build": "./scripts/clean.sh && ./scripts/build.sh && npm run link",
+    "link": "npm link ./build/pact-mock-service-darwin/ && npm link ./build/pact-mock-service-win32/ && npm link ./build/pact-mock-service-linux-ia32/ && npm link ./build/pact-mock-service-linux-x64/",
+    "unlink": "npm unlink ./build/pact-mock-service-darwin/ && npm unlink ./build/pact-mock-service-win32/ && npm unlink ./build/pact-mock-service-linux-ia32/ && npm unlink ./build/pact-mock-service-linux-x64/",
     "postinstall": "node ./src/check-dependencies.js",
-    "test": "./node_modules/.bin/mocha -R spec bin/**/*.spec.js --timeout 10000",
-    "watch": "./node_modules/.bin/nodemon -x npm test",
+    "test": "./node_modules/.bin/mocha -R spec ./index.spec.js src/**/*.spec.js",
+    "watch": "./node_modules/.bin/nodemon -e js -x npm test",
     "prepublish": "npm test"
   }
 }
