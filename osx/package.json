@@ -1,6 +1,6 @@
 {
 	"name": "@pact-foundation/pact-mock-service-darwin",
-	"version": "0.9.0",
+	"version": "0.10.1",
 	"description": "Pact mock service",
 	"os": [
 		"darwin"
