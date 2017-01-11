@@ -1,6 +1,6 @@
 {
 	"name": "@pact-foundation/pact-mock-service-linux-x64",
-	"version": "0.9.0",
+	"version": "0.10.0",
 	"description": "Pact mock service",
 	"os": [
 		"linux"
