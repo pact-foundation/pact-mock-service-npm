@@ -2,6 +2,8 @@
 
 # Pact Mock Service for NPM
 
+[![Build Status](https://travis-ci.org/pact-foundation/pact-mock-service-npm.svg?branch=master)](https://travis-ci.org/pact-foundation/pact-mock-service-npm)
+
 Installation wrapper for standalone platform-specific executables packaged from the Ruby [pact-mock-service-gem] gem.
 
 On install, this package selects and installs the correct [pact-mock-service-standalone] executable for your environment.
