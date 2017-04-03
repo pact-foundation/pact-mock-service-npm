@@ -22,4 +22,10 @@ cp ../README.md $STANDALONE_PACKAGE_NAME
 mv $STANDALONE_PACKAGE_NAME $NPM_PACKAGE_NAME
 cd $NPM_PACKAGE_NAME
 
-tar -czf ../../dist/${NPM_PACKAGE_NAME}.tar.gz *
+echo "@pact-foundation:registry=https://registry.npmjs.org/" > .npmrc
+echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> .npmrc
+echo "//registry.npmjs.org/:username=pact-foundation" >> .npmrc
+echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> .npmrc
+echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
+
+tar -czf ../../dist/${NPM_PACKAGE_NAME}.tar.gz * .npmrc
