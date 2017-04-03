@@ -1,6 +1,6 @@
 {
 	"name": "@pact-foundation/pact-mock-service-win32",
-	"version": "0.10.2",
+	"version": "1.0.0",
 	"description": "Pact mock service",
 	"os": [
 		"win32"
