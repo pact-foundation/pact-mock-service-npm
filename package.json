@@ -47,7 +47,7 @@
   },
   "main": "./index.js",
   "scripts": {
-    "build": "./scripts/clean.sh && ./scripts/build.sh && npm run link",
+    "build": "./scripts/clean.sh && ./scripts/build.sh",
     "link": "npm link ./build/pact-mock-service-darwin/ && npm link ./build/pact-mock-service-win32/ && npm link ./build/pact-mock-service-linux-ia32/ && npm link ./build/pact-mock-service-linux-x64/",
     "unlink": "npm unlink ./build/pact-mock-service-darwin/ && npm unlink ./build/pact-mock-service-win32/ && npm unlink ./build/pact-mock-service-linux-ia32/ && npm unlink ./build/pact-mock-service-linux-x64/",
     "postinstall": "node ./src/check-dependencies.js",
