@@ -1,6 +1,6 @@
 {
   "name": "@pact-foundation/pact-mock-service",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Pact mock service wrapper package. Installing this will install an executable appropriate for your platform.",
   "os" : [ "darwin", "linux" , "win32"],
   "cpu" : [ "x64", "ia32" ],
@@ -40,10 +40,10 @@
     "sinon": "^1.15.4"
   },
   "optionalDependencies": {
-    "@pact-foundation/pact-mock-service-linux-ia32": "1.1.0",
-    "@pact-foundation/pact-mock-service-linux-x64": "1.1.0",
-    "@pact-foundation/pact-mock-service-win32": "1.1.0",
-    "@pact-foundation/pact-mock-service-darwin": "1.1.0"
+    "@pact-foundation/pact-mock-service-linux-ia32": "1.2.0",
+    "@pact-foundation/pact-mock-service-linux-x64": "1.2.0",
+    "@pact-foundation/pact-mock-service-win32": "1.2.0",
+    "@pact-foundation/pact-mock-service-darwin": "1.2.0"
   },
   "main": "./index.js",
   "scripts": {
