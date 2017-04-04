@@ -45,7 +45,8 @@ deploy:
     tags: true
 - provider: script
   skip_cleanup: true
-  script: npm publish . --access public
+  # Need to link local dependencies so the wrapper can run its tests
+  script: "npm link && npm publish . --access public"
   on:
     branch: master
     tags: true
