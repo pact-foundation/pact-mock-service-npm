@@ -17,15 +17,7 @@ script:
 after_script:
 - npm test
 before_deploy:
-- echo "@pact-foundation:registry=https://registry.npmjs.org/" > .npmrc
-- echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> .npmrc
-- echo "//registry.npmjs.org/:username=pact-foundation" >> .npmrc
-- echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> .npmrc
-- echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
-- cp .npmrc dist/pact-mock-service-darwin/
-- cp .npmrc dist/pact-mock-service-win32/
-- cp .npmrc dist/pact-mock-service-linux-ia32/
-- cp .npmrc dist/pact-mock-service-linux-x64/
+- npm run create_npmrc
 deploy:
 - provider: script
   skip_cleanup: true
