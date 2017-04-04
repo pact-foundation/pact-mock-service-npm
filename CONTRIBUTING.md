@@ -7,16 +7,14 @@
 * Commit
 
     $ git add package.json scripts/build.sh */package.json
-    $ git commit -m "Updating pact-mock_service gem version to X.Y.Z"
-    $ git tag -a "1.0.0" -m "Releasing X.Y.Z"
-    $ git push --follow-tags
+    $ git commit -m "Releasing X.Y.Z"
+    $ git tag -a "X.Y.Z" -m "Releasing X.Y.Z" && git push --follow-tags
 
 ## How to re-tag if a publish fails
 
 Delete broken tag:
 
-    $ git tag -d "1.0.0"
-    $ git push origin :refs/tags/1.0.0
+    $ git tag -d "X.Y.Z" && git push origin :refs/tags/X.Y.Z
 
 Now you can re-tag and push as above.
 
@@ -46,5 +44,5 @@ Log in to npm via command line using the pact-foundation account.
 Echo the ~/.npmrc file and grab the token out of it.
 
     $ gem install travis
-    $ travis encrypt NPM_KEY=${YOUR_KEY_HERE} --add env.global
+    $ travis encrypt NPM_KEY=${NPM_KEY} --add env.global
 
