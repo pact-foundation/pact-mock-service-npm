@@ -1,4 +1,4 @@
-linux-x86
-linux-x86_64
-osx
-win32
+scripts
+dist
+build
+platforms
