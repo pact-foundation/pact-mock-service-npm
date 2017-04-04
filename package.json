@@ -53,6 +53,7 @@
     "postinstall": "node ./src/check-dependencies.js",
     "test": "./node_modules/.bin/mocha -R spec ./index.spec.js src/**/*.spec.js",
     "watch": "./node_modules/.bin/nodemon -e js -x npm test",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "create_npmrc": "./scripts/create_npmrc_file.sh"
   }
 }

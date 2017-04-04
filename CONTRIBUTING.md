@@ -7,8 +7,8 @@
 * Commit
 
     $ git add package.json scripts/build.sh */package.json
-    $ git commit -m "Updating pact-mock_service gem version to 1.0.0"
-    $ git tag -a "1.0.0" -m "Releasing 1.0.0"
+    $ git commit -m "Updating pact-mock_service gem version to X.Y.Z"
+    $ git tag -a "1.0.0" -m "Releasing X.Y.Z"
     $ git push --follow-tags
 
 ## How to re-tag if a publish fails
@@ -30,10 +30,13 @@ Now you can re-tag and push as above.
 
 ## Publishing manually
 
-    $ npm publish dist/pact-mock-service-win32.tar.gz
-    $ npm publish dist/pact-mock-service-linux-ia32.tar.gz
-    $ npm publish dist/pact-mock-service-darwin.tar.gz
-    $ npm publish dist/pact-mock-service-linux-x64.tar.gz
+Log in to npm as pact-foundation.
+
+    $ npm publish dist/pact-mock-service-win32 --access public
+    $ npm publish dist/pact-mock-service-linux-ia32 --access public
+    $ npm publish dist/pact-mock-service-darwin --access public
+    $ npm publish dist/pact-mock-service-linux-x64 --access public
+    $ npm publish . --access public
 
 ## Updating NPM key
 

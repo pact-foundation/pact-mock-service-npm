@@ -12,6 +12,5 @@ fi
 
 cd pact-mock_service-${GEM_VERSION}
 
-
 bundle
 bundle exec rake package
