@@ -11,7 +11,7 @@ cp pact-mock_service-${GEM_VERSION}/pkg/pact-mock-service-* .
 rm -rf $STANDALONE_PACKAGE_NAME
 
 if [ $EXTENSION = "zip" ]; then
-  unzip $STANDALONE_PACKAGE_NAME.$EXTENSION
+  unzip -q $STANDALONE_PACKAGE_NAME.$EXTENSION
 else
   tar -xzf $STANDALONE_PACKAGE_NAME.$EXTENSION
 fi

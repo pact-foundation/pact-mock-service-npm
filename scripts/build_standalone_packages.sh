@@ -6,7 +6,7 @@ mkdir -p build
 cd build
 if [ ! -d "pact-mock_service-${GEM_VERSION}" ]; then
   wget https://github.com/bethesque/pact-mock_service/archive/v${GEM_VERSION}.zip -O temp.zip
-  unzip temp.zip
+  unzip -q temp.zip
   rm temp.zip
 fi
 
