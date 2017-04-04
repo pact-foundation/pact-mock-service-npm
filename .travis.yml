@@ -4,7 +4,7 @@ sudo: required
 dist: trusty
 env:
   global:
-  - secure: Kc5j0fwV/6zHeENXidold1kRCHN7BKVY88Oe+0nNaqlJeaHfm+TUDTrhNghtYk2cEf1hM3SqgUozJvqGGWv+VkmMewv3UBWn0q21qLpyn8NgscnYAATrR4mEZMzq0ZWA63l/6t2l8v8wK7Y15PnbK990u5BLpLyTSqubfLXcx8k=
+    secure: SJuJezlrSj3OM+u1XHEdTX1jJk9JRaIQYJZ3ngBlmdurkdr6q3ZFfVcsbFPjIWygTnLq0iIpi/mZF4bojbM1Ke9cfwNqbTqBUGiOY7XSoUXfjvMRBz+ztlBXmj8NxAvT0WZmSEfexJIqWmb+2pdSCPaHOLKS2LJH5uRT+4+yiSI=
 cache:
   apt: true
 before_install:
