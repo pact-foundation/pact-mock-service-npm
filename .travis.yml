@@ -17,7 +17,7 @@ script:
 after_script:
 - npm test
 before_deploy:
-- npm create_npmrc
+- npm run create_npmrc
 deploy:
 - provider: script
   skip_cleanup: true
