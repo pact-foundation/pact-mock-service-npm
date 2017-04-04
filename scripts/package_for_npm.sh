@@ -19,13 +19,15 @@ fi
 cp ../platforms/$SUFFIX/* $STANDALONE_PACKAGE_NAME
 cp ../src/pact-mock-service.js $STANDALONE_PACKAGE_NAME
 cp ../README.md $STANDALONE_PACKAGE_NAME
-mv $STANDALONE_PACKAGE_NAME $NPM_PACKAGE_NAME
-cd $NPM_PACKAGE_NAME
 
-echo "@pact-foundation:registry=https://registry.npmjs.org/" > .npmrc
-echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> .npmrc
-echo "//registry.npmjs.org/:username=pact-foundation" >> .npmrc
-echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> .npmrc
-echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
+set +x #Don't echo the NPM key
 
-tar -czf ../../dist/${NPM_PACKAGE_NAME}.tar.gz * .npmrc
+echo "@pact-foundation:registry=https://registry.npmjs.org/" > $STANDALONE_PACKAGE_NAME/.npmrc
+echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> $STANDALONE_PACKAGE_NAME/.npmrc
+echo "//registry.npmjs.org/:username=pact-foundation" >> $STANDALONE_PACKAGE_NAME/.npmrc
+echo "//registry.npmjs.org/:email=pact-foundation@googlegroups.com" >> $STANDALONE_PACKAGE_NAME/.npmrc
+echo "//registry.npmjs.org/:always-auth=true" >> $STANDALONE_PACKAGE_NAME/.npmrc
+
+set -x
+
+mv $STANDALONE_PACKAGE_NAME ../dist/$NPM_PACKAGE_NAME
