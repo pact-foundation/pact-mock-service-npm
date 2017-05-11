@@ -2,7 +2,7 @@
 
 set -e
 
-export GEM_VERSION=1.2.0
+export GEM_VERSION=2.0.1
 export RELEASE_VERSION=1 # TODO remove this as not used
 export PACKAGE_VERSION=${GEM_VERSION}-${RELEASE_VERSION}
 
